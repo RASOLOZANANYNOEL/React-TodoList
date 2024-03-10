@@ -1,25 +1,23 @@
-import logo from './logo.svg';
-import './App.css';
+import Header from "./Components/Header/Header";// header au lieu de style
+import Tasks from "./Components/Tasks/Tasks";
+import TasksContextProvider from "./Contexts/TasksContext";
 
-function App() {
+const App = () => {
+
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Header />
+      <TasksContextProvider>
+        <section className='container' style={{ position: 'relative' }}>
+          <Tasks />
+        </section>
+      </TasksContextProvider>
+    </>
   );
-}
+};
 
 export default App;
+
+/*<PageTitle count={0} title='Task' />
+      <Button  >New Task</Button>*/
